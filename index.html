@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>铁路标准检索问答助手</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>铁路标准检索问答助手</h1>
+        <p>面向铁路标准场景的专业检索与分析服务</p>
+        <nav>
+            <a href="#" onclick="scrollToSection('sidebar')">核心能力</a>
+            <a href="#" onclick="scrollToSection('chat-area')">智能问答</a>
+            <a href="#" onclick="scrollToSection('history-sidebar')">历史会话</a>
+            <a href="#" onclick="scrollToSection('docs-footer')">文档中心</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 核心能力展示 (左侧) -->
+        <aside class="sidebar">
+            <h2>核心能力</h2>
+            <div class="capability-card">
+                <h3>标准条文检索</h3>
+                <p>快速定位TB/T标准条款</p>
+                <button onclick="quickAsk('TB/T标准检测方法')">快捷提问</button>
+            </div>
+            <div class="capability-card">
+                <h3>缺陷与风险分析</h3>
+                <p>分析现场缺陷风险</p>
+                <button onclick="quickAsk('缺陷风险分析')">快捷提问</button>
+            </div>
+            <div class="capability-card">
+                <h3>检测方法生成</h3>
+                <p>生成检测方法建议</p>
+                <button onclick="quickAsk('检测方法')">快捷提问</button>
+            </div>
+        </aside>
+
+        <!-- 智能问答区 (中央) -->
+        <main class="chat-area">
+            <div id="chat-messages"></div>
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="输入您的问题，例如：TB 005-2014中的检测方法">
+                <button onclick="sendMessage()">发送</button>
+            </div>
+        </main>
+
+        <!-- 历史会话管理 (右侧) -->
+        <aside class="history-sidebar">
+            <h2>历史会话</h2>
+            <ul id="history-list">
+                <!-- 动态添加历史记录 -->
+            </ul>
+        </aside>
+    </div>
+
+    <!-- 文档管理中心 (底部) -->
+    <footer class="docs-footer">
+        <h2>文档管理中心</h2>
+        <p>基于本地知识库构建</p>
+        <ul>
+            <li><a href="#" onclick="viewDoc('TB 005-2014 B-TrunC终端设备测试方法')">TB 005-2014 B-TrunC终端设备测试方法</a></li>
+            <li><a href="#" onclick="viewDoc('TB/T 1234-2020 铁路信号设备标准')">TB/T 1234-2020 铁路信号设备标准</a></li>
+            <li><a href="#" onclick="viewDoc('TB/T 5678-2019 轨道交通安全规范')">TB/T 5678-2019 轨道交通安全规范</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
